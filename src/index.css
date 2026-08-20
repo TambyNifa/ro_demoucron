@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+    --bg-primary: #f8fafc; /* Très clair pour le mode clair */
+    --bg-secondary: #ffffff;
+    --bg-card: rgba(255, 255, 255, 0.8);
+    --border-card: rgba(226, 232, 240, 0.8);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --rf-node-bg: #ffffff;
+    --rf-node-border: #cbd5e1;
+    --rf-node-text: #1e293b;
+    --rf-node-hl-bg: #fffcf0;
+    --rf-node-hl-border: #f59e0b;
+}
+
+.dark {
+    --bg-primary: #0b0f19; /* Fond très profond et élégant (slate-900 teinté bleu) */
+    --bg-secondary: #161e2e;
+    --bg-card: rgba(30, 41, 59, 0.6);
+    --border-card: rgba(51, 65, 85, 0.4);
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --rf-node-bg: #1e293b;
+    --rf-node-border: #334155;
+    --rf-node-text: #f8fafc;
+    --rf-node-hl-bg: #2d2417; 
+    --rf-node-hl-border: #f59e0b;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    background-image: 
+        radial-gradient(ellipse at top left, rgba(79, 70, 229, 0.05) 0%, transparent 40%),
+        radial-gradient(ellipse at bottom right, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Glass card (Modernized) */
+.glass-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.glass-card:hover {
+    box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.08);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-card);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* React Flow overrides */
+.react-flow__node-default {
+    background: var(--rf-node-bg) !important;
+    border: 2px solid var(--rf-node-border) !important;
+    color: var(--rf-node-text) !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    border-radius: 50% !important;
+    width: 44px !important;
+    height: 44px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+}
+
+.react-flow__node-default.highlighted {
+    border-color: var(--rf-node-hl-border) !important;
+    background: var(--rf-node-hl-bg) !important;
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2) !important;
+}
+
+.react-flow__edge-path {
+    stroke-width: 2.5;
+}
+
+.react-flow__background {
+    background-color: transparent !important;
+}
+
+.react-flow__attribution {
+    display: none;
+}
+
+/* Matrix cell highlight */
+.cell-modified {
+    animation: pulse-cell 0.4s ease-out;
+}
+
+@keyframes pulse-cell {
+    0% {
+        background-color: rgba(245, 158, 11, 0.3);
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Number mono font */
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+}
