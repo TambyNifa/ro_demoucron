@@ -1,7 +1,7 @@
 import React from "react";
 import { EXAMPLE_MATRIX } from "../algorithms/demoucron";
 
-export default function ControlPanel({ onCalculate, onReset, onLoadExample, hasResult, calcMode, setCalcMode }) {
+export default function ControlPanel({ onCalculate, onReset, onLoadExample, calcMode, setCalcMode }) {
   return (
     <div className="glass-card p-4">
       <div className="flex flex-wrap items-center gap-3">

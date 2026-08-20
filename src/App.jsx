@@ -4,7 +4,7 @@ import GraphView from "./components/GraphView";
 import ControlPanel from "./components/ControlPanel";
 import StepDisplay from "./components/StepDisplay";
 import PathDisplay from "./components/PathDisplay";
-import { demoucron, EXAMPLE_MATRIX, createEmptyMatrix } from "./algorithms/demoucron";
+import { demoucron, EXAMPLE_MATRIX } from "./algorithms/demoucron";
 
 const DEFAULT_N = 6;
 const INF = Infinity;

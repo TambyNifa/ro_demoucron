@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { INF, getPath } from "../algorithms/demoucron";
 
 export default function PathDisplay({ finalMatrix, predecessors, n, onHighlightPath }) {

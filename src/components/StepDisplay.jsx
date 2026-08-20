@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { INF, NINF } from "../algorithms/demoucron";
 
 function formatVal(v) {
